@@ -1,0 +1,72 @@
+{% extends "layout/base.html" %}
+{% block main_content %}
+    {% load static %}
+<div class="main-content-inner">
+    <div class="card-area">
+        {% if messages %}
+            <div class="span12">
+                {% for message in messages %}
+                    <div class="alert alert-success">
+                        {{ message|safe }}
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+        <div class="modal hide fade" id="myModal">
+            <div class="modal-header" style="width: 50%; margin: 0 auto; color:white">
+                <h3>Criminal Detected</h3>
+            </div>
+            <div class="modal-body">
+             {% comment %} <div class="row">
+            <div class="col-lg-4 col-md-6 mt-5"> {% endcomment %}
+                <div class="card " style="width: 50%; margin: 0 auto;">
+                    <img class="card-img-top img-fluid" src="{{ thief.picture }}" alt="image">
+                    <div class="card-body">
+                        <h5 class="title">Status:{{ thief.status }}</h5>
+                        <p class="card-text">Name:{{ thief.name }}</p>
+                        <p class="card-text">Nationality:{{ thief.national_id }}</p>
+                        <p class="card-text">Imark:{{ thief.imark }}</p>
+                        <p class="card-text">Crime(s):{{ thief.cdone }}</p>
+                        <div id='map' width="100%" style='height:30%'></div>
+                        {% comment %} <td>{{ thief.name }}</td>
+                                        <td>{{ thief.national_id }}</td>
+                                        <td>{{ thief.address }}</td>
+                                        <td>{{ thief.imark }}</td>
+                                        <td>{{ thief.cdone }}</td> {% endcomment %}
+                    </div>
+                </div>
+                {% comment %} </div>
+                </div> {% endcomment %}
+            </div>
+            <div class="modal-footer">
+            {% comment %} <a class="close" data-dismiss="modal">×</a> {% endcomment %}
+                {% comment %} <a class="btn close btn-primary" data-dismiss="modal">Close</a> {% endcomment %}
+                <a href="/success" class="btn btn-primary">Got It!</a>
+            </div>
+        </div>
+
+        {% comment %} <div class="row">
+            <div class="col-lg-4 col-md-6 mt-5">
+                <div class="card card-bordered">
+                    <img class="card-img-top img-fluid" src="{% static  'assets/images/card/uploadimage.jpg' %}" alt="image">
+                    <div class="card-body">
+                        <h5 class="title">Status:</h5>
+                        <p class="card-text">Name:</p>
+                        <p class="card-text">Nationality:</p>
+                        <p class="card-text">Imark:</p>
+                    </div>
+                </div>
+            </div>
+        </div> {% endcomment %}
+    </div>
+</div>
+{% endblock %}
+{% block js_content %}
+    <script src="{% static  'assets/js/vendor/jquery-2.2.4.min.js' %}"></script>
+    <script type="text/javascript">
+    $(window).on('load', function() {
+        $('#myModal').modal('show');
+    });
+</script>
+
+{% endblock %}

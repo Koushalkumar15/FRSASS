@@ -1,0 +1,44 @@
+
+
+
+{% comment %} ====================================================================== {% endcomment %}
+
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Criminal Detection</title>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v0.44.2/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v0.44.2/mapbox-gl.css' rel='stylesheet' />
+  </head>
+  <body>
+   {% comment %} <h1>Map </h1> {% endcomment %}
+     
+   <div id='map' width="400px" style='height:600px'></div>
+   <a href="/success">Back</a>
+   <script>
+    mapboxgl.accessToken = 'pk.eyJ1Ijoia2F1c2hhbHhveG8iLCJhIjoiY2tuYTNzOGg3MWU4aDJ3bGdlaWF1Mjh3MCJ9.VfD8LHUvTMXGds-Byo2v2g';
+    var map = new mapboxgl.Map({
+     container: 'map',
+     style: 'mapbox://styles/mapbox/streets-v10',
+     center: [72.835230,19.163227],
+     zoom: 15
+    });
+
+    new mapboxgl.Marker()
+    .setLngLat([72.835230,19.163227])
+    .addTo(map);
+   </script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
