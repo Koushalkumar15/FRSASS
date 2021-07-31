@@ -1,23 +1,34 @@
 Criminal Recognition
 
-# clone this repository
+1. clone this repository
+
 $ git clone https://github.com/kumarkaushal920/FRSASS.git
 
-#do a pip install
+
+2. Install virtualenv.
+
 $ pip install virtualenv
 
-# create virtual environment
-$ virtualenv [name of your new virtual environment]
 
-## activate environment.
-$ . envName/Scripts/activate
+3. create virtual environment.
 
-## install requirements.
-pip install -r requirements.txt
+$ virtualenv venv
 
-## setup db.
-#modify the database in the settings.py which is this part 
-DATABASES = { 'default': 
+
+4. activate environment.
+
+$ . venv/Scripts/activate
+
+
+5. install requirements.
+
+$ pip install -r requirements.txt
+
+
+6. modify the database in the settings.py which is this part
+
+DATABASES = 
+            { 'default': 
                 { 
                     'NAME': 'crime_identify',
                     'ENGINE': 'mysql.connector.django',
@@ -29,10 +40,14 @@ DATABASES = { 'default':
                 }
             }
 
-#create a database with the name of your choice
+7. Open XAMPP control panel > start Apache and MySQL 
 
-#import the sql crime_identify.sql in the root folder for the project you cloned
+8. Goto Chrome type localhost > goto phpMyadmin >Create a database with the name of your choice
+
+9. import the sql crime_identify.sql from the root folder for the project you cloned
 
 #you can also run a python migrate if you do not want the data populated in my database
 
-python manage.py runserver [7000]
+10. Run the server. 
+
+$ python manage.py runserver [7000]
