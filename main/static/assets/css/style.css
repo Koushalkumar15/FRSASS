@@ -10,8 +10,8 @@ body{
        
     z-index:-1;
         width: 100%; height: 100%;
-        background-color: #3418b6;
-        background-image: url("https://www.fedsmith.com/wp-content/uploads/2019/06/fingerprint-background-check.jpg");
+        /* background-color: #3418b6; */
+        background-image: url("https://image.freepik.com/free-vector/abstract-security-digital-technology-blue-background_43778-455.jpg");
         background-repeat: no-repeat; background-size: cover;
         background-position: 50% 50%; 
         overflow-x: hidden;
